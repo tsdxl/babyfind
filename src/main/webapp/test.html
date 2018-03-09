@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
             var pwd = $("#pwd").val();
             $.ajax({
                 type: "post",
-                url: "",//这个地址你自己填一下
+                url: "/user/userByJson",//这个地址你自己填一下
                 data: {
                     u: uid,
                     p: pwd
