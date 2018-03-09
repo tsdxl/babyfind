@@ -23,7 +23,7 @@ public class UserController {
 		System.out.println("UserController.getUserByName:id"+id);
 		return "showUser";
 	}
-	@RequestMapping("/editItemSubmit_RequestJson")
+	@RequestMapping("userByJson")
 	@ResponseBody
 	public  User getUserByJson(User user) throws Exception {
 		return user;
