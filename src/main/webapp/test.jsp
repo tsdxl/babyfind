@@ -5,12 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登录</title>
+
 </head>
 <body>
-	<form action="${pageContext.request.contextPath }/user/getUserInfo"	method="post">
+	<form action="${pageContext.request.contextPath }/user/showUser"	method="get">
 		<label>账号：</label> 
-		<input type="text" id="name" name="name"/><br /> 
-		<input type="submit" value="提交" /> <input type="reset" value="重置" />
+		<input type="text" id="id" name="id"/><br />
+		<input type="submit" value="提交" />
 	</form>
+
+	<script src="bootstrap-3.3.5-dist/jquery.cookie.js"></script>
 </body>
 </html>
