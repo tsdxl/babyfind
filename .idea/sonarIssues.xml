@@ -63,6 +63,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/test/java/controller/UserControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../south/south-admin-web/src/main/java/com/ucmed/south/web/controller/user/UserLoginController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../south/south-common-web/src/main/java/com/ucmed/web/common/utils/rocketMq/RocketMQProvider.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../south/south-user-service-rest/src/main/java/com/ucmed/south/rocketmq/service/biz/impl/UserLoginStrategy.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../south/yilian-user-service-rest/src/test/java/user/UserLoginFlowBizImplTest.java">
           <value>
             <set />
