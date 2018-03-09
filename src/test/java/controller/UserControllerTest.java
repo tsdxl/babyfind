@@ -60,7 +60,7 @@ public void testGetUserByJson() throws Exception {
     User user=new User();
     user.setUserid(1);
     System.out.println(JSON.toJSONString(user));
-    System.out.println(userController.getUserByJson(user).getUserid());
+//    System.out.println(userController.getUserByJson(user).getUserid());
 } 
 
 
