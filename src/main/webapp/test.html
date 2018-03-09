@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -17,25 +18,27 @@
         <input type="button" name="" id="denglu" value="登录" />
     </div>
     <script type="text/javascript">
-        var uid = $("#uid").val();
-        var pwd = $("#pwd").val();
-        $.ajax({
-            type: "post",
-            url: "",//这个地址你自己填一下
-            data: {
-                u: uid,
-                p: pwd
-            },
-            dataType: "TEXT",
-            success: function(r) {                    //r为返回值
-                if(r.trim() == "y") {              //y为 url跳转网页中传回的值。
-                    //window.location.href = "跳转界面";
-                    alert("用户名或密码正确");
-                } else {
-                    alert("用户名或密码错误");
+        $("#denglu").click(function() {
+            var uid = $("#uid").val();
+            var pwd = $("#pwd").val();
+            $.ajax({
+                type: "post",
+                url: "",//这个地址你自己填一下
+                data: {
+                    u: uid,
+                    p: pwd
+                },
+                dataType: "TEXT",
+                success: function(r) {                    //r为返回值
+                    if(r.trim() == "y") {              //y为 url跳转网页中传回的值。
+                        //window.location.href = "跳转界面";
+                        alert("用户名或密码正确");
+                    } else {
+                        alert("用户名或密码错误");
+                    }
                 }
-            }
-        });
+            });
+        })
         </script>
 </body>
 </html>
