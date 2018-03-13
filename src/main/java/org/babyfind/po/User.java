@@ -1,8 +1,12 @@
 package org.babyfind.po;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+@Entity
+@Table(name = "t_user_login")
 public class User {
 	private Integer userid;
-	private String username;
+	private String phone;
 
 	public Integer getUserid() {
 		return userid;
@@ -12,12 +16,11 @@ public class User {
 		this.userid = userid;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-
 }
