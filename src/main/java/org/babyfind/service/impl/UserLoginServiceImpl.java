@@ -4,12 +4,14 @@ import org.babyfind.dao.UserLoginMapper;
 import org.babyfind.po.UserLogin;
 import org.babyfind.service.UserLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @author zx
  * @Description
  * @date 2018/3/13 17:12
  */
+@Service("userLoginService")
 public class UserLoginServiceImpl implements UserLoginService {
     @Autowired
     private UserLoginMapper userLoginMapper;

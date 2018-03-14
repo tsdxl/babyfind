@@ -1,7 +1,9 @@
 package org.babyfind.dao;
 
 import org.babyfind.po.UserLogin;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserLoginMapper {
     int deleteByPrimaryKey(Integer lid);
 

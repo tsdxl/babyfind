@@ -1,4 +1,4 @@
-package org.babyfind.common.util;
+package org.babyfind.common;
 
 import java.util.HashMap;
 import java.util.Map;

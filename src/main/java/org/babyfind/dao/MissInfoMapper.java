@@ -1,7 +1,9 @@
 package org.babyfind.dao;
 
 import org.babyfind.po.MissInfo;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface MissInfoMapper {
     int deleteByPrimaryKey(Integer mid);
 

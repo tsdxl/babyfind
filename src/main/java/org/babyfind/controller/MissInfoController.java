@@ -1,6 +1,6 @@
 package org.babyfind.controller;
 
-import org.babyfind.common.util.AjaxResult;
+import org.babyfind.common.AjaxResult;
 import org.babyfind.po.MissInfo;
 import org.babyfind.service.MissInfoService;
 import org.babyfind.service.UserLoginService;
@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
+
 /**
  * @author zx
  * @Description
@@ -18,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/missInfo/")
 public class MissInfoController {
-    @Autowired
+    @Resource
     private MissInfoService missInfoService;
     @Autowired
     private UserLoginService userLoginService;
@@ -28,7 +30,7 @@ public class MissInfoController {
     public AjaxResult deleteInfobyMid(Integer mid) throws Exception {
         AjaxResult ajaxResult=AjaxResult.succ();
         if(missInfoService.getInfoByMid(mid)==null){
-            return AjaxResult.error("查无此信息");
+            return AjaxResult.error("没有此账户");
         }
         missInfoService.deleteInfobyMid(mid);
         return ajaxResult;
@@ -39,14 +41,14 @@ public class MissInfoController {
     public AjaxResult insertInfoByMissInfo(String phone,MissInfo missInfo) throws Exception {
         AjaxResult ajaxResult=AjaxResult.succ();
         if(userLoginService.getInfoByPhone(phone)==null){
-            AjaxResult.error("没有此账户");
+            return AjaxResult.error("没有此账户");
         }
         missInfo.setLid(userLoginService.getInfoByPhone(phone).getLid());
         missInfoService.insertInfoByMissInfo(missInfo);
         return ajaxResult;
     }
 
-    @RequestMapping(value = "insertInfo", method = RequestMethod.POST)
+    @RequestMapping(value = "getInfoByMid", method = RequestMethod.POST)
     @ResponseBody
     public AjaxResult getInfoByMid(Integer mid) throws Exception {
         AjaxResult ajaxResult=AjaxResult.succ();
@@ -55,12 +57,15 @@ public class MissInfoController {
         return ajaxResult;
     }
 
-//    @RequestMapping(value = "updateInfo", method = RequestMethod.POST)
-//    @ResponseBody
-//    public AjaxResult updateInfoByMissInfo(MissInfo missInfo) throws Exception {
-//        AjaxResult ajaxResult=AjaxResult.succ();
-//        missInfoService.getInfoByMid(missInfo);
-//        ajaxResult.addSingleModel(missInfo);
-//        return ajaxResult;
-//    }
+    @RequestMapping(value = "updateInfo", method = RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult updateInfoByMissInfo(MissInfo missInfo) throws Exception {
+        AjaxResult ajaxResult=AjaxResult.succ();
+        if(missInfoService.getInfoByMid(missInfo.getMid())==null){
+            return AjaxResult.error("没有此账户");
+        }
+        missInfoService.updateInfoByMissInfo(missInfo);
+        ajaxResult.addSingleModel(missInfoService.getInfoByMid(missInfo.getMid()));
+        return ajaxResult;
+    }
 }

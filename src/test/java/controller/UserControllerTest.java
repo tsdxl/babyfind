@@ -33,35 +33,35 @@ public class UserControllerTest {
     private UserService userService;
 
 @Before
-public void before() throws Exception { 
-} 
+public void before() throws Exception {
+}
 
 @After
-public void after() throws Exception { 
-} 
+public void after() throws Exception {
+}
 
-/** 
-* 
-* Method: getUserByUserId(int id, Model model) 
-* 
-*/ 
+/**
+*
+* Method: getUserByUserId(int id, Model model)
+*
+*/
 @Test
-public void testGetUserByUserId() throws Exception { 
-//TODO: Test goes here... 
-} 
+public void testGetUserByUserId() throws Exception {
+//TODO: Test goes here...
+}
 
-/** 
-* 
-* Method: getUserByJson(User user) 
-* 
-*/ 
+/**
+*
+* Method: getUserByJson(User user)
+*
+*/
 @Test
 public void testGetUserByJson() throws Exception {
     User user=new User();
     user.setUserid(1);
     System.out.println(JSON.toJSONString(user));
 //    System.out.println(userController.getUserByJson(user).getUserid());
-} 
+}
 
 
 } 

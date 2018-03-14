@@ -1,7 +1,9 @@
 package org.babyfind.dao;
 
 import org.babyfind.po.VolunteerInfo;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface VolunteerInfoMapper {
     int deleteByPrimaryKey(Integer vid);
 
