@@ -6,6 +6,8 @@ import org.babyfind.service.MissInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author zx
  * @Description
@@ -34,5 +36,20 @@ public class MissInfoServiceImpl implements MissInfoService{
     @Override
     public Integer updateInfoByMissInfo(MissInfo missInfo) {
         return missInfoMapper.updateByPrimaryKeySelective(missInfo);
+    }
+
+    @Override
+    public List<MissInfo> getInfoByLid(Integer lid) {
+        return missInfoMapper.selectByLid(lid);
+    }
+
+    @Override
+    public List<MissInfo> getAll() {
+        return missInfoMapper.selectAll();
+    }
+
+    @Override
+    public Integer deleteInfobyLid(Integer lid) {
+        return missInfoMapper.deleteByLid(lid);
     }
 }

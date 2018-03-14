@@ -3,10 +3,13 @@ package org.babyfind.dao;
 import org.babyfind.po.MissInfo;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface MissInfoMapper {
     int deleteByPrimaryKey(Integer mid);
 
+    int deleteByLid(Integer lid);
     /**
      * @param record
      * @return int
@@ -30,4 +33,8 @@ public interface MissInfoMapper {
     int updateByPrimaryKeyWithBLOBs(MissInfo record);
 
     int updateByPrimaryKey(MissInfo record);
+
+    List<MissInfo> selectByLid(Integer lid);
+
+    List<MissInfo> selectAll();
 }

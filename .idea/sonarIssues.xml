@@ -68,6 +68,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/babyfind/controller/UserLoginController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/babyfind/controller/VolunteerInfoController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/org/babyfind/dao/MissInfoMapper.java">
           <value>
             <set />
@@ -113,12 +123,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/babyfind/service/VolunteerInfoService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/org/babyfind/service/impl/MissInfoServiceImpl.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/org/babyfind/service/impl/UserLoginServiceImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/org/babyfind/service/impl/VolunteerInfoServiceImpl.java">
           <value>
             <set />
           </value>
@@ -159,6 +179,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml">
           <value>
             <set />
           </value>
@@ -204,6 +229,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/test/java/controller/UserControllerTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../south/south-admin-web/src/test/java/com/ucmed/user/UserLoginControllerTest.java">
           <value>
             <set />
           </value>

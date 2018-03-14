@@ -1,5 +1,6 @@
 package org.babyfind.service.impl;
 
+import org.babyfind.dao.MissInfoMapper;
 import org.babyfind.dao.UserLoginMapper;
 import org.babyfind.po.UserLogin;
 import org.babyfind.service.UserLoginService;
@@ -15,9 +16,12 @@ import org.springframework.stereotype.Service;
 public class UserLoginServiceImpl implements UserLoginService {
     @Autowired
     private UserLoginMapper userLoginMapper;
+    @Autowired
+    private MissInfoMapper missInfoMapper;
     @Override
     public Integer deleteInfobyLid(Integer lid) {
-        return userLoginMapper.deleteByPrimaryKey(lid);
+        userLoginMapper.deleteByPrimaryKey(lid);
+        return missInfoMapper.deleteByLid(lid);
     }
 
     @Override

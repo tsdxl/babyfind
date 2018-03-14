@@ -17,4 +17,5 @@ public interface UserLoginService {
     public Integer updateInfoByMissInfo(UserLogin userLogin);
 
     public UserLogin getInfoByPhone(String Phone);
+
 }

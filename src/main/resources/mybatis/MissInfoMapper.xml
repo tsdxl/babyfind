@@ -32,9 +32,20 @@
     from t_miss_info
     where mid = #{mid,jdbcType=INTEGER}
   </select>
+  <select id="selectAll" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_miss_info
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_miss_info
     where mid = #{mid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByLid" parameterType="java.lang.Integer" >
+    delete from t_miss_info
+    where lid = #{lid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="org.babyfind.po.MissInfo" >
     insert into t_miss_info (mid, lid, missname, 
@@ -193,4 +204,12 @@
       place = #{place,jdbcType=VARCHAR}
     where mid = #{mid,jdbcType=INTEGER}
   </update>
+  <select id="selectByLid" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_miss_info
+    where lid = #{lid,jdbcType=INTEGER}
+  </select>
 </mapper>

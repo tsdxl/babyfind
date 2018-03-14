@@ -2,6 +2,8 @@ package org.babyfind.service;
 
 import org.babyfind.po.MissInfo;
 
+import java.util.List;
+
 /**
  * @author zx
  * @ClassName ${FILE_NAME}
@@ -17,4 +19,10 @@ public interface MissInfoService{
     public MissInfo getInfoByMid(Integer mid);
 
     public Integer updateInfoByMissInfo(MissInfo missInfo);
+
+    public List<MissInfo> getInfoByLid(Integer lid);
+
+    public List<MissInfo> getAll();
+
+    public Integer deleteInfobyLid(Integer lid);
 }
