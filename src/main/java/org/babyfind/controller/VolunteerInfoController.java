@@ -1,20 +1,25 @@
 package org.babyfind.controller;
 
 import org.babyfind.common.AjaxResult;
+import org.babyfind.po.UserLogin;
 import org.babyfind.po.VolunteerInfo;
 import org.babyfind.service.UserLoginService;
 import org.babyfind.service.VolunteerInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author zx
  * @Description
  * @date 2018/3/14 14:15
  */
+@Controller
+@RequestMapping("/volunteer/")
 public class VolunteerInfoController {
     @Resource
     private VolunteerInfoService volunteerInfoService;
@@ -25,7 +30,7 @@ public class VolunteerInfoController {
     @ResponseBody
     public AjaxResult deleteInfobyVid(Integer vid) throws Exception {
         AjaxResult ajaxResult=AjaxResult.succ();
-        if(volunteerInfoService.getInfoByMid(vid)==null){
+        if(volunteerInfoService.getInfoByVid(vid)==null){
             return AjaxResult.error("没有此账户");
         }
         volunteerInfoService.deleteInfobyMid(vid);
@@ -40,6 +45,11 @@ public class VolunteerInfoController {
         if(userLoginService.getInfoByPhone(phone)==null){
             return AjaxResult.error("没有此账户");
         }
+        UserLogin userLogin=userLoginService.getInfoByPhone(phone);
+        if(userLogin.getFlag()!=0){
+            userLogin.setFlag(2);
+            userLoginService.updateInfoByMissInfo(userLogin);
+        }
         VolunteerInfo.setLid(userLoginService.getInfoByPhone(phone).getLid());
         volunteerInfoService.insertInfoByVolunteerInfo(VolunteerInfo);
         return ajaxResult;
@@ -49,8 +59,17 @@ public class VolunteerInfoController {
     @ResponseBody
     public AjaxResult getInfoByVid(Integer vid) throws Exception {
         AjaxResult ajaxResult=AjaxResult.succ();
-        VolunteerInfo VolunteerInfo=volunteerInfoService.getInfoByMid(vid);
+        VolunteerInfo VolunteerInfo=volunteerInfoService.getInfoByVid(vid);
         ajaxResult.addSingleModel(VolunteerInfo);
+        return ajaxResult;
+    }
+
+    @RequestMapping("getAll")
+    @ResponseBody
+    public AjaxResult getAll() throws Exception {
+        AjaxResult ajaxResult=AjaxResult.succ();
+        List<VolunteerInfo> volunteerInfo=volunteerInfoService.getAll();
+        ajaxResult.addObject(AjaxResult.DATAS,volunteerInfo);
         return ajaxResult;
     }
 
@@ -58,11 +77,11 @@ public class VolunteerInfoController {
     @ResponseBody
     public AjaxResult updateInfoByVolunteerInfo(VolunteerInfo VolunteerInfo) throws Exception {
         AjaxResult ajaxResult=AjaxResult.succ();
-        if(volunteerInfoService.getInfoByMid(VolunteerInfo.getVid())==null){
+        if(volunteerInfoService.getInfoByVid(VolunteerInfo.getVid())==null){
             return AjaxResult.error("没有此账户");
         }
         volunteerInfoService.updateInfoByVolunteerInfo(VolunteerInfo);
-        ajaxResult.addSingleModel(volunteerInfoService.getInfoByMid(VolunteerInfo.getVid()));
+        ajaxResult.addSingleModel(volunteerInfoService.getInfoByVid(VolunteerInfo.getVid()));
         return ajaxResult;
     }
 }

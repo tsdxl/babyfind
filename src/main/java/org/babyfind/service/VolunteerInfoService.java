@@ -14,7 +14,7 @@ public interface VolunteerInfoService {
 
     public Integer insertInfoByVolunteerInfo(VolunteerInfo missInfo);
 
-    public VolunteerInfo getInfoByMid(Integer vid);
+    public VolunteerInfo getInfoByVid(Integer vid);
 
     public Integer updateInfoByVolunteerInfo(VolunteerInfo missInfo);
 

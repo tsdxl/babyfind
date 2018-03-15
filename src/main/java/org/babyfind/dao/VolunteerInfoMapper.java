@@ -3,6 +3,8 @@ package org.babyfind.dao;
 import org.babyfind.po.VolunteerInfo;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface VolunteerInfoMapper {
     int deleteByPrimaryKey(Integer vid);
@@ -16,4 +18,6 @@ public interface VolunteerInfoMapper {
     int updateByPrimaryKeySelective(VolunteerInfo record);
 
     int updateByPrimaryKey(VolunteerInfo record);
+
+    List<VolunteerInfo> selectAll();
 }

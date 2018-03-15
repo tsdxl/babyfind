@@ -28,7 +28,7 @@ public class VolunteerInfoServiceImpl implements VolunteerInfoService {
     }
 
     @Override
-    public VolunteerInfo getInfoByMid(Integer mid) {
+    public VolunteerInfo getInfoByVid(Integer mid) {
         return volunteerInfoMapper.selectByPrimaryKey(mid);
     }
 
@@ -44,7 +44,7 @@ public class VolunteerInfoServiceImpl implements VolunteerInfoService {
 
     @Override
     public List<VolunteerInfo> getAll() {
-        return null;
+        return volunteerInfoMapper.selectAll();
     }
 
     @Override
