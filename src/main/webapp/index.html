@@ -2,13 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/index.css" />
-<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<title>首页</title>
-</head>
 
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/babyfind.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
 <body>
 	<div class="top">
 		<div class="top_con">
@@ -16,8 +18,12 @@
 				欢迎来到寻亲互助网
 			</div>
 			<div class="top_login">
-				<span>登录</span>
-				<span>注册</span>
+				<a href="javascript:void(0)">
+					<span>登录</span>
+				</a>
+				<a href="javascript:void(0)">
+					<span>注册</span>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -28,14 +34,107 @@
 		<div class="title">
 			<img width="100%" src="img/title.png" alt="" />
 		</div>
+		<div class="nav">
+			<ul>
+				<li style="color: #ff0000;">
+					<a href="index.html">首页</a>
+				</li>
+				<li>
+					<a href="search_login.html">寻亲登记</a>
+				</li>
+				<li>
+					<a href="photo_contrast.html">照片比对</a>
+				</li>
+				<li>
+					<a href="aboutus.html">关于我们</a>
+				</li>
+				<li>
+					<a href="knowledge.html">救助知识</a>
+				</li>
+			</ul>
+		</div>
 	</div>
-	<div class="banner">
-		<img src="img/banner1.jpg" alt="" />
+	<div class="slideBox">
+        <ul>
+            <li><img width="100%" src="img/banner1.jpg" alt=""/></li>
+            <li><img width="100%" src="img/banner2.jpg" alt=""/></li>
+            <li><img width="100%" src="img/banner3.jpg" alt=""/></li>
+            <li><img width="100%" src="img/banner4.jpg" alt=""/></li>
+        </ul>
+        <div class="spanBox">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="prev"><img src="img/flex_prev.png" width="40" height="40" alt=""/></div>
+        <div class="next"><img src="img/flex_next.png" width="40" height="40" alt=""/></div>
+    </div>
+	<script>
+		
+	</script>
+	<div class="middle">
+		<div class="help">
+			<div class="requester">
+				<img src="img/requester.png" alt="" />
+				<div class="requester_text">
+					寻找亲人
+					<a href="javascript:void(0)">
+						<div class="joinin">
+							我要加入
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="volunteer">
+				<img src="img/volunteer.png" alt="" />
+				<div class="requester_text">
+					帮忙寻亲
+					<a href="javascript:void(0)">
+						<div class="joinin">
+							我要加入
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="socialnews">
+				<div class="socialnews_title">社会新闻</div>
+				<p><b>·</b>中国青年志愿者形象片策划制作项目比选公告<span>2017.10.17</span></p>
+				<p><b>·</b>中国青年志愿者形象片策划制作项目比选公告<span>2017.10.17</span></p>
+				<p><b>·</b>中国青年志愿者形象片策划制作项目比选公告<span>2017.10.17</span></p>
+				<p><b>·</b>中国青年志愿者形象片策划制作项目比选公告<span>2017.10.17</span></p>
+				<p><b>·</b>中国青年志愿者形象片策划制作项目比选公告<span>2017.10.17</span></p>
+			</div>
+		</div>
+		<div class="search_info">
+			<div class="search_info_title">
+				<img src="img/sign1.png" alt="" />
+				<span>最新寻人信息</span>
+				<div class="more">
+					<a href="javascript:void(0)">查看更多 >></a>
+				</div>
+			</div>
+			<div class="search_info_con">
+				<ul>
+					<li><img src="img/people1.png" alt="" /></li>
+					<li><img src="img/people1.png" alt="" /></li>
+					<li><img src="img/people1.png" alt="" /></li>
+					<li><img src="img/people1.png" alt="" /></li>
+					<li><img src="img/people1.png" alt="" /></li>
+					<li><img src="img/people1.png" alt="" /></li>
+					<li><img src="img/people1.png" alt="" /></li>
+					<li><img src="img/people1.png" alt="" /></li>
+					<li><img src="img/people1.png" alt="" /></li>
+					<li><img src="img/people1.png" alt="" /></li>
+					<li><img src="img/people1.png" alt="" /></li>
+					<li><img src="img/people1.png" alt="" /></li>
+				</ul>
+			</div>
+		</div>
 	</div>
-	<div class="nav">
-		<ul>
-			<li></li>
-		</ul>
+	<div class="footer">
+		<p>版权所有 ©  寻亲互助网 All Rights Reserved</p>
+		<p>地址：浙江工商大学杭州商学院</p>
 	</div>
 </body>
 </html>
