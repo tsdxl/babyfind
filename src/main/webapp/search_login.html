@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/flexslide.js"></script>
+<script type="text/javascript" src="js/babyfind.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </head>
@@ -59,7 +59,7 @@
 		<div class="search_left">
 			<img src="img/search_nav1.png" alt="" />
 		</div>
-		<div class="search_right" style="display: none;">
+		<div class="search_right">
 			<p>寻亲登记说明</p>
 			进行寻人登记之前，请认真阅读以下内容及法律声明：当您的孩子失踪或被拐后，请马上拨打110报警。<br>
 			1.本网站为寻人者提供免费的寻人帮助，请如实填写您在网站登记的资料。<br>
@@ -85,13 +85,13 @@
 					</div>
 				</a>
 				<a href="javascript:void(0)">
-					<div class="button button_right">
+					<div class="button button_right" onclick="button1()">
 						下一步
 					</div>
 				</a>
 			</div>
 		</div>
-		<div class="search_right_two">
+		<div class="search_right_two" style="display: none;">
 			<div class="search_info">
 				<table>
 				    <tr>
@@ -114,7 +114,7 @@
 				    <tr>
 				    	<td><span>出生日期 :</span></td>
 				    	<td>
-					    	<input id="date" type="date" value=""/>
+					    	<input id="date" type="date"/>
 					    </td>
 					</tr>
 				    <tr>
@@ -122,7 +122,7 @@
 				    		<span>失踪时身高 :</span>
 				    	</td>
 			    		<td>
-			    			<input type="password" name="user_password" />
+			    			<input type="text" name="height" />
 			    		</td>
 			    		<td>
 				    		厘米
@@ -141,15 +141,17 @@
 				    		<span>是否采血 :</span>
 				    	</td>
 				    	<td>
-					    	<input type="radio" id="male" name="user_sex" checked />是
-					    	<input type="radio" id="female" name="user_sex" />否
+					    	<input type="radio" id="yes_blood" name="blood" checked />是
+					    	<input type="radio" id="no_blood" name="blood" />否
 					    </td>
 					</tr>
 					<tr>
-				    	<td><span>是否报案 :</span></td>
 				    	<td>
-					    	<input type="radio" id="male" name="user_sex" checked />是
-					    	<input type="radio" id="female" name="user_sex" />否
+				    		<span>是否报案 :</span>
+				    	</td>
+				    	<td>
+					    	<input type="radio" id="yes_report" name="report" checked />是
+					    	<input type="radio" id="no_report" name="report" />否
 					    </td>
 					</tr>
 				    <tr>
@@ -157,18 +159,91 @@
 				    		<span>失踪人籍贯 :</span>
 				    	</td>
 				    	<td>
-				    		<input type="text" name="user_name" />
+				    		<input type="text" name="native_place" />
 				    	</td>
 				    </tr>
 				    <tr>
 				    	<td>
-					    	手机号码 :</td><td><input type="text" name="user_phone1" />
+					    	<span>失踪人地点 :</span>
+					    </td>
+					    <td>
+					    	<input placeholder="请填写详细地址" type="text" name="miss_place" />
+					    </td>
+					</tr>
+					<tr>
+				    	<td>
+					    	<span>失踪人特征描述 :</span>
+					    </td>
+					    <td>
+					    	<textarea type="text" name="Feature_description"></textarea>
+					    </td>
+					</tr>
+					<tr>
+				    	<td>
+					    	<span>失踪经过 :</span>
+					    </td>
+					    <td>
+					    	<textarea type="text" name="miss_process"></textarea>
+					    </td>
+					</tr>
+					<tr>
+				    	<td>
+					    	家庭以及线索资料 :
+					    </td>
+					    <td>
+					    	<textarea type="text" name="user_phone1"></textarea>
+					    </td>
+					</tr>
+					<tr>
+				    	<td>
+				    		<span>有无唤起孩子记忆信息 :</span>
+				    	</td>
+				    	<td>
+					    	<input type="radio" id="male" name="user_sex" checked />是
+					    	<input type="radio" id="female" name="user_sex" />否
+					    </td>
+					</tr>
+					<tr>
+				    	<td>
+					    	其他资料 :
+					    </td>
+					    <td>
+					    	<textarea type="text" name="user_phone1"></textarea>
 					    </td>
 					</tr>
 				</table>
 			</div>
+			<div class="search_right_button">
+				<a href="index.html">
+					<div class="button button_left">
+						上一步
+					</div>
+				</a>
+				<a href="javascript:void(0)">
+					<div class="button button_right">
+						下一步
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="search_right_three" style="display: none">
+			<div class="search_info">
+				<span>选择要上传的照片文件</span>
+				<input type="file" class="img_file" /><br>
+				<div class="img_box"></div>
+			</div>
+			<div class="search_right_button">
+				<a href="javascript:void(0)">
+					<div class="button">
+						完成登记
+					</div>
+				</a>
+			</div>
 		</div>
 	</div>
+	<script>
+
+	</script>
 	<div class="footer">
 		<p>版权所有 ©  寻亲互助网 All Rights Reserved</p>
 		<p>地址：浙江工商大学杭州商学院</p>

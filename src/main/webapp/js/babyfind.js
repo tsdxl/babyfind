@@ -47,8 +47,24 @@ $(document).ready(function(){
 			number.eq(sw).trigger("click");
 		},2000);
 	})
-})
 
+	//上传照片并显示照片
+	$('.img_file').change(function() {
+	    return change(this, 'file-one');
+	});
+	function change(obj, itemId) {
+	    var a = URL.createObjectURL(obj.files[0]);
+	    var urla = obj.files[0];
+	    var template = '<img src="'+a+'" width="100%" >';
+	    $('.img_box').append(template.replace('{src}', URL.createObjectURL(obj.files[0])));
+	}
+
+	//点击下一步到填写信息页面
+	// function button1(){
+	// 	$(".search_right").hide();
+	// 	// $(".search_right_two").show();
+	// }
+});
 
 
 
