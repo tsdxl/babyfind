@@ -58,12 +58,56 @@ $(document).ready(function(){
 	    var template = '<img src="'+a+'" width="100%" >';
 	    $('.img_box').append(template.replace('{src}', URL.createObjectURL(obj.files[0])));
 	}
-
-	//点击下一步到填写信息页面
-	// function button1(){
-	// 	$(".search_right").hide();
-	// 	// $(".search_right_two").show();
-	// }
+	//点击上一步
+	$("#prevstemp").click(function() {
+		$(".search_right").show();
+		$(".search_left_img1").show();
+		$(".search_right_two").hide();
+		$(".search_left_img2").hide();
+	});
+	//点击下一步
+	$("#nextstemp").click(function() {
+		$(".search_right").hide();
+		$(".search_left_img1").hide();
+		$(".search_right_two").show();
+		$(".search_left_img2").show();
+	});
+	$("#nextstemp2").click(function() {
+		if($("input").val()==""){
+			alert("请完善您的必填信息");
+		}
+		else if($(".birth_date").val()==""||$(".miss_date").val()==""){
+			alert("请选择日期");
+		}
+		else if($("number").val()>300||$("number[name='height']").val()<1||$("number[name='height']").val()==""){
+			alert("请正确输入身高，范围为1-300");
+		}
+		else if($("textarea[name='feature_description']").val()==''||$("textarea[name='miss_process']").val()==''){
+			alert("请完善您的必填信息");
+		}
+		else{
+			$(".search_right_two").hide();
+			$(".search_left_img2").hide();
+			$(".search_right_three").show();
+			$(".search_left_img3").show();
+		}
+	});
+	//光标移开时会提示
+	$("input[name='user_name']").blur(function() {
+		if($("input[name='user_name']").val()==''){
+			alert("请输入姓名");
+		}
+	});
+	$("input[name='native_place']").blur(function() {
+		if($("input[name='native_place']").val()==''){
+			alert("请输入籍贯");
+		}
+	});
+	$("input[name='miss_place']").blur(function() {
+		if($("input[name='miss_place']").val()==''){
+			alert("请输入失踪地点");
+		}
+	});
 });
 
 

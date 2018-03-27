@@ -22,6 +22,7 @@ a:visited{text-decoration:none;color:#626262;}
 	line-height: 30px;
 	text-align: center;
 	margin: 0 auto;
+	cursor: pointer;
 }
 .top{
 	width: 100%;
@@ -305,6 +306,12 @@ a:visited{text-decoration:none;color:#626262;}
 	margin: 30px 0;
 	float: left;
 }
+.search_left_img1{
+	display: block;
+}
+.search_left_img2,.search_left_img3,.search_left_img4{
+	display: none;
+}
 .search_right{
 	width: 73%;
 	margin: 30px 1%;
@@ -376,6 +383,10 @@ td:nth-child(2n){
 .search_right_two .search_info span:before{
     content:"* ";
     color:red;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 2px;
+    margin-right: 5px;
 }
 input[type="text"]:read-only{
     border:#888484 solid 2px;

@@ -57,7 +57,10 @@
 	<div class="middle">
 		<div class="redline"></div>
 		<div class="search_left">
-			<img src="img/search_nav1.png" alt="" />
+			<img class="search_left_img1" src="img/search_nav1.png" alt="" />
+			<img class="search_left_img2" src="img/search_nav2.png" alt="" />
+			<img class="search_left_img3" src="img/search_nav3.png" alt="" />
+			<img class="search_left_img4" src="img/search_nav4.png" alt="" />
 		</div>
 		<div class="search_right">
 			<p>寻亲登记说明</p>
@@ -84,11 +87,9 @@
 						返回首页
 					</div>
 				</a>
-				<a href="javascript:void(0)">
-					<div class="button button_right" onclick="button1()">
-						下一步
-					</div>
-				</a>
+				<div class="button button_right" id="nextstemp" >
+					下一步
+				</div>
 			</div>
 		</div>
 		<div class="search_right_two" style="display: none;">
@@ -114,7 +115,7 @@
 				    <tr>
 				    	<td><span>出生日期 :</span></td>
 				    	<td>
-					    	<input id="date" type="date"/>
+					    	<input class="birth_date" type="date"/>
 					    </td>
 					</tr>
 				    <tr>
@@ -122,7 +123,7 @@
 				    		<span>失踪时身高 :</span>
 				    	</td>
 			    		<td>
-			    			<input type="text" name="height" />
+			    			<input type="number" name="height" />
 			    		</td>
 			    		<td>
 				    		厘米
@@ -133,7 +134,7 @@
 				    		<span>失踪日期 :</span>
 				    	</td>
 				    	<td>
-					    	<input id="date" type="date" value=""/>
+					    	<input class="miss_date" type="date" value=""/>
 					    </td>
 					</tr>
 					<tr>
@@ -175,7 +176,7 @@
 					    	<span>失踪人特征描述 :</span>
 					    </td>
 					    <td>
-					    	<textarea type="text" name="Feature_description"></textarea>
+					    	<textarea type="text" name="feature_description"></textarea>
 					    </td>
 					</tr>
 					<tr>
@@ -191,7 +192,7 @@
 					    	家庭以及线索资料 :
 					    </td>
 					    <td>
-					    	<textarea type="text" name="user_phone1"></textarea>
+					    	<textarea type="text" name="family_data"></textarea>
 					    </td>
 					</tr>
 					<tr>
@@ -199,8 +200,8 @@
 				    		<span>有无唤起孩子记忆信息 :</span>
 				    	</td>
 				    	<td>
-					    	<input type="radio" id="male" name="user_sex" checked />是
-					    	<input type="radio" id="female" name="user_sex" />否
+					    	<input type="radio" id="yes_memory" name="memory" checked />是
+					    	<input type="radio" id="no_memory" name="memory" />否
 					    </td>
 					</tr>
 					<tr>
@@ -208,19 +209,19 @@
 					    	其他资料 :
 					    </td>
 					    <td>
-					    	<textarea type="text" name="user_phone1"></textarea>
+					    	<textarea type="text" name="others"></textarea>
 					    </td>
 					</tr>
 				</table>
 			</div>
 			<div class="search_right_button">
-				<a href="index.html">
-					<div class="button button_left">
+				<a href="javascript:void(0)">
+					<div class="button button_left" id="prevstemp">
 						上一步
 					</div>
 				</a>
 				<a href="javascript:void(0)">
-					<div class="button button_right">
+					<div class="button button_right" id="nextstemp2" >
 						下一步
 					</div>
 				</a>
@@ -234,16 +235,16 @@
 			</div>
 			<div class="search_right_button">
 				<a href="javascript:void(0)">
-					<div class="button">
+					<div class="button" id="complete">
 						完成登记
 					</div>
 				</a>
 			</div>
 		</div>
+		<div class="complete_tips">
+			
+		</div>
 	</div>
-	<script>
-
-	</script>
 	<div class="footer">
 		<p>版权所有 ©  寻亲互助网 All Rights Reserved</p>
 		<p>地址：浙江工商大学杭州商学院</p>
