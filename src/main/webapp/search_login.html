@@ -62,7 +62,7 @@
 			<img class="search_left_img3" src="img/search_nav3.png" alt="" />
 			<img class="search_left_img4" src="img/search_nav4.png" alt="" />
 		</div>
-		<div class="search_right">
+		<div class="search_right" style="display: none;">
 			<p>寻亲登记说明</p>
 			进行寻人登记之前，请认真阅读以下内容及法律声明：当您的孩子失踪或被拐后，请马上拨打110报警。<br>
 			1.本网站为寻人者提供免费的寻人帮助，请如实填写您在网站登记的资料。<br>
@@ -227,22 +227,29 @@
 				</a>
 			</div>
 		</div>
-		<div class="search_right_three" style="display: none">
-			<div class="search_info">
-				<span>选择要上传的照片文件</span>
-				<input type="file" class="img_file" /><br>
-				<div class="img_box"></div>
+		<div class="search_right_three" style="display: block;">
+			<div class="search_right_three_con">
+				<div class="search_info">
+					<span>选择要上传的照片文件</span>
+					<input type="file" class="img_file" /><br>
+					<div class="img_box"></div>
+				</div>
+				<div class="search_right_button">
+					<a href="javascript:void(0)">
+						<div class="button" id="complete">
+							完成登记
+						</div>
+					</a>
+				</div>
 			</div>
-			<div class="search_right_button">
-				<a href="javascript:void(0)">
-					<div class="button" id="complete">
-						完成登记
-					</div>
-				</a>
+			<div class="complete_tips" style="display:none">
+				<p>提示</p>
+				<div class="complete_tips_con">
+					登记成功<br>
+					<span>5</span>秒后自动跳转<br>
+					个人信息
+				</div>
 			</div>
-		</div>
-		<div class="complete_tips">
-			
 		</div>
 	</div>
 	<div class="footer">

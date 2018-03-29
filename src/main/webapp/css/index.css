@@ -418,6 +418,7 @@ textarea{
 	float: left;
 	border: 1px solid #c0c0c0;
 	padding: 0px 20px;
+	position: relative;
 }
 .search_right_three .search_info{
 	width: 70%;
@@ -437,5 +438,33 @@ textarea{
 	height: 400px;
 	margin: 30px auto 0;
 	border: 1px solid #999;
+}
+.complete_tips{
+	width: 250px;
+	height: 170px;
+	border: 1px solid #b51c1c;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin:auto;
+}
+.complete_tips p{
+	width: 100%;
+	background-color: #b51c1c;
+	font-size: 2rem;
+	color: #fff;
+	text-align: center;
+	line-height: 3rem;
+}
+.complete_tips_con{
+	text-align: center;
+	line-height: 2.5rem;
+    margin: 1.8rem 0;
+}
+.complete_tips_con span{
+	margin:0;
+	float: inherit;
 }
 /* search_login end */

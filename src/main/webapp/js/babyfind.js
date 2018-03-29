@@ -92,6 +92,23 @@ $(document).ready(function(){
 			$(".search_left_img3").show();
 		}
 	});
+	//点击完成
+	$("#complete").click(function() {
+		$(".search_left_img3").hide();
+		$(".search_left_img4").show();
+		$(".complete_tips").show();
+	    var num=$(".complete_tips_con span").text();
+	    //console.log(num);
+	    function tip_time(){
+	    	num=num-1;
+	    	//console.log(num);
+	    	$('.complete_tips_con span').html(num);
+	    	if(num==0){
+	    		window.location.href="index.html"
+	    	}
+	    };
+	    setInterval(tip_time,1000);
+	});
 	//光标移开时会提示
 	$("input[name='user_name']").blur(function() {
 		if($("input[name='user_name']").val()==''){
