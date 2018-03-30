@@ -449,6 +449,7 @@ textarea{
 	bottom: 0;
 	right: 0;
 	margin:auto;
+	background-color: #fff;
 }
 .complete_tips p{
 	width: 100%;
