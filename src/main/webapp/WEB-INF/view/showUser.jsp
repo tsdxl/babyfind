@@ -13,8 +13,8 @@
 				<td>${user.userid }</td>
 			</tr>
 			<tr>
-				<td>name:</td>
-				<td>${user.username }</td>
+				<td>phone:</td>
+				<td>${user.phone }</td>
 			</tr>
 		</table>
 	</form>

@@ -2,7 +2,7 @@ package org.babyfind.po;
 
 public class User {
 	private Integer userid;
-	private String username;
+	private String phone;
 
 	public Integer getUserid() {
 		return userid;
@@ -12,12 +12,11 @@ public class User {
 		this.userid = userid;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-
 }

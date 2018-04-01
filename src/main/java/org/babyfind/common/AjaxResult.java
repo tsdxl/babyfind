@@ -1,4 +1,4 @@
-package org.babyfind.common.util;
+package org.babyfind.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,10 +31,10 @@ public class AjaxResult {
     public AjaxResult() {
     }
 
-//    public AjaxResult addObject(String attributeName, Object attributeValue) {
-//        getModel().put(attributeName, attributeValue);
-//        return this;
-//    }
+    public AjaxResult addObject(String attributeName, Object attributeValue) {
+        getModel().put(attributeName, attributeValue);
+        return this;
+    }
 
     public AjaxResult addAllObject(Map<String, Object> datas) {
         if (null != datas) {

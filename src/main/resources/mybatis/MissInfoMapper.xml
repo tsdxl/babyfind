@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.babyfind.dao.MissInfoMapper" >
+  <resultMap id="BaseResultMap" type="org.babyfind.po.MissInfo" >
+    <id column="mid" property="mid" jdbcType="INTEGER" />
+    <result column="lid" property="lid" jdbcType="INTEGER" />
+    <result column="missname" property="missname" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="birth" property="birth" jdbcType="DATE" />
+    <result column="missdate" property="missdate" jdbcType="DATE" />
+    <result column="missplace" property="missplace" jdbcType="VARCHAR" />
+    <result column="picurl" property="picurl" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="relationship" property="relationship" jdbcType="VARCHAR" />
+    <result column="place" property="place" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="org.babyfind.po.MissInfo" extends="BaseResultMap" >
+    <result column="appearance" property="appearance" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    mid, lid, missname, sex, birth, missdate, missplace, picurl, name, relationship, 
+    place
+  </sql>
+  <sql id="Blob_Column_List" >
+    appearance
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_miss_info
+    where mid = #{mid,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_miss_info
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_miss_info
+    where mid = #{mid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByLid" parameterType="java.lang.Integer" >
+    delete from t_miss_info
+    where lid = #{lid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.babyfind.po.MissInfo" >
+    insert into t_miss_info (mid, lid, missname, 
+      sex, birth, missdate, missplace, 
+      picurl, name, relationship, 
+      place, appearance)
+    values (#{mid,jdbcType=INTEGER}, #{lid,jdbcType=INTEGER}, #{missname,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=INTEGER}, #{birth,jdbcType=DATE}, #{missdate,jdbcType=DATE}, #{missplace,jdbcType=VARCHAR}, 
+      #{picurl,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{relationship,jdbcType=VARCHAR}, 
+      #{place,jdbcType=VARCHAR}, #{appearance,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="org.babyfind.po.MissInfo" >
+    insert into t_miss_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="mid != null" >
+        mid,
+      </if>
+      <if test="lid != null" >
+        lid,
+      </if>
+      <if test="missname != null" >
+        missname,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="birth != null" >
+        birth,
+      </if>
+      <if test="missdate != null" >
+        missdate,
+      </if>
+      <if test="missplace != null" >
+        missplace,
+      </if>
+      <if test="picurl != null" >
+        picurl,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="relationship != null" >
+        relationship,
+      </if>
+      <if test="place != null" >
+        place,
+      </if>
+      <if test="appearance != null" >
+        appearance,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="mid != null" >
+        #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="lid != null" >
+        #{lid,jdbcType=INTEGER},
+      </if>
+      <if test="missname != null" >
+        #{missname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="birth != null" >
+        #{birth,jdbcType=DATE},
+      </if>
+      <if test="missdate != null" >
+        #{missdate,jdbcType=DATE},
+      </if>
+      <if test="missplace != null" >
+        #{missplace,jdbcType=VARCHAR},
+      </if>
+      <if test="picurl != null" >
+        #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="relationship != null" >
+        #{relationship,jdbcType=VARCHAR},
+      </if>
+      <if test="place != null" >
+        #{place,jdbcType=VARCHAR},
+      </if>
+      <if test="appearance != null" >
+        #{appearance,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="org.babyfind.po.MissInfo" >
+    update t_miss_info
+    <set >
+      <if test="lid != null" >
+        lid = #{lid,jdbcType=INTEGER},
+      </if>
+      <if test="missname != null" >
+        missname = #{missname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="birth != null" >
+        birth = #{birth,jdbcType=DATE},
+      </if>
+      <if test="missdate != null" >
+        missdate = #{missdate,jdbcType=DATE},
+      </if>
+      <if test="missplace != null" >
+        missplace = #{missplace,jdbcType=VARCHAR},
+      </if>
+      <if test="picurl != null" >
+        picurl = #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="relationship != null" >
+        relationship = #{relationship,jdbcType=VARCHAR},
+      </if>
+      <if test="place != null" >
+        place = #{place,jdbcType=VARCHAR},
+      </if>
+      <if test="appearance != null" >
+        appearance = #{appearance,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where mid = #{mid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="org.babyfind.po.MissInfo" >
+    update t_miss_info
+    set lid = #{lid,jdbcType=INTEGER},
+      missname = #{missname,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      birth = #{birth,jdbcType=DATE},
+      missdate = #{missdate,jdbcType=DATE},
+      missplace = #{missplace,jdbcType=VARCHAR},
+      picurl = #{picurl,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      relationship = #{relationship,jdbcType=VARCHAR},
+      place = #{place,jdbcType=VARCHAR},
+      appearance = #{appearance,jdbcType=LONGVARCHAR}
+    where mid = #{mid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="org.babyfind.po.MissInfo" >
+    update t_miss_info
+    set lid = #{lid,jdbcType=INTEGER},
+      missname = #{missname,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      birth = #{birth,jdbcType=DATE},
+      missdate = #{missdate,jdbcType=DATE},
+      missplace = #{missplace,jdbcType=VARCHAR},
+      picurl = #{picurl,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      relationship = #{relationship,jdbcType=VARCHAR},
+      place = #{place,jdbcType=VARCHAR}
+    where mid = #{mid,jdbcType=INTEGER}
+  </update>
+  <select id="selectByLid" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_miss_info
+    where lid = #{lid,jdbcType=INTEGER}
+  </select>
+</mapper>

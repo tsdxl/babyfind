@@ -17,6 +17,6 @@ http://www.springframework.org/schema/util http://www.springframework.org/schema
 	<bean id="jspViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/" />
-		<property name="suffix" value=".jsp" />
+		<property name="suffix" value=".html" />
 	</bean>
 </beans>
