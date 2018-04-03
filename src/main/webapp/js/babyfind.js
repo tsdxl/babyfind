@@ -79,11 +79,11 @@ $(document).ready(function(){
 		else if($(".birth_date").val()==""||$(".miss_date").val()==""){
 			alert("请选择日期");
 		}
-		else if($("number").val()>300||$("number[name='height']").val()<1||$("number[name='height']").val()==""){
-			alert("请正确输入身高，范围为1-300");
+		else if($("number[name='family_phone']").val()==""){
+			alert("请正确输入手机号码");
 		}
-		else if($("textarea[name='feature_description']").val()==''||$("textarea[name='miss_process']").val()==''){
-			alert("请完善您的必填信息");
+		else if($("textarea[name='feature_description']").val()==''){
+			alert("请填写关于失踪人的特征等信息");
 		}
 		else{
 			$(".search_right_two").hide();
@@ -115,9 +115,9 @@ $(document).ready(function(){
 			alert("请输入姓名");
 		}
 	});
-	$("input[name='native_place']").blur(function() {
-		if($("input[name='native_place']").val()==''){
-			alert("请输入籍贯");
+	$("input[name='family_name']").blur(function() {
+		if($("input[name='family_name']").val()==''){
+			alert("请输入联系人姓名");
 		}
 	});
 	$("input[name='miss_place']").blur(function() {
