@@ -508,6 +508,7 @@ textarea{
 .login_middle_img{
 	width: 50%;
 	float: left;
+	padding-top: 30px;
 }
 .login_middle_right{
 	width: 50%;
@@ -541,7 +542,7 @@ textarea{
 }
 .login_input{
 	border: 2px solid #ccc;
-	padding: 50px 120px;
+	padding: 30px 15%;
 }
 .login_name{
 	position: relative;
@@ -636,3 +637,37 @@ textarea{
 	margin: 20px 0;
 }
 /* login end */
+/* about_us start */
+.about_list{
+	width: 80%;
+	margin:60px auto;
+  overflow: hidden;
+}
+.about_list ul{
+	list-style-type: none;
+}
+.about_list ul li{
+	float: left;
+	text-align: center;
+	width: 25%;
+}
+.about_con{
+	width: 100%;
+	text-align: center;
+}
+.about_partgrey{
+	background-color: #f7f7f7;
+	padding: 80px 0;
+	line-height: 40px;
+	font-size: 14px;
+}
+.about_partgrey p{
+	font-size: 30px;
+	letter-spacing: 2px;
+}
+.redline2{
+	border-bottom: 2px solid #af424b;
+	width: 80px;
+	margin: 0 auto 50px;
+}
+/* about_us end */
