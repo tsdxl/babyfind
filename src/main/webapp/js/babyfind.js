@@ -1,5 +1,5 @@
-//首页轮播图
 $(document).ready(function(){
+//首页轮播图start
 	var slideBox = $(".slideBox");
 	var ul = slideBox.find("ul");
 	var oneWidth = slideBox.find("ul li").eq(0).width();
@@ -47,6 +47,7 @@ $(document).ready(function(){
 			number.eq(sw).trigger("click");
 		},2000);
 	})
+//首页轮播图end
 
 	//上传照片并显示照片
 	$('.img_file').change(function() {
