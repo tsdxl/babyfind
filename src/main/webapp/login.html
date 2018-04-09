@@ -7,20 +7,22 @@
 
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/v_code.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </head>
 <body>
 	<div class="login">
-		<div class="login_logo">
-			<div class="logo">
-				<img width="100%" src="img/logo.png" alt="" />
+		<a href="index.html">
+			<div class="login_logo">
+				<div class="logo">
+					<img width="100%" src="img/logo.png" alt="" />
+				</div>
+				<div class="title">
+					<img width="100%" src="img/title.png" alt="" />
+				</div>
 			</div>
-			<div class="title">
-				<img width="100%" src="img/title.png" alt="" />
-			</div>
-		</div>
+		</a>
 		<div class="login_middle">
 			<div class="login_middle_img">
 				<img width="100%" src="img/login_bg.jpg" alt="" />
@@ -28,22 +30,28 @@
 			<div class="login_middle_right">
 				<div class="login_con">
 					<div class="login_title">
-						<a href="javascript:void(0)">
-							<div class="login_title_search">寻亲者</div>
+						<a href="javascript:void(0)" onclick="login_middle_right_vol()">
+							<div class="login_title_search login_title_bg" val="0">寻亲者</div>
 						</a>
-						<a href="javascript:void(0)">
-							<div class="login_title_vol">志愿者</div>
+						<a href="javascript:void(0)" onclick="login_middle_right_search()">
+							<div class="login_title_vol" val="1">志愿者</div>
 						</a>
 					</div>
 					<div class="login_input">
 						<div class="login_name">
 							<i class="icon_user"></i>
-							<input type="text" placeholder="用户名" name=""/>
+							<input type="text" placeholder="用户名/手机号" name="family_phone"/>
 						</div>
 						<div class="login_name">
 							<i class="icon_password"></i>
-							<input type="text" placeholder="密码" />
+							<input type="password" placeholder="密码"  name="family_password"/>
 						</div>
+						<!-- <div class="login_code" style="border: solid 1px black;">
+							<select  id="flag">
+								<option value="0">寻亲者</option>
+								<option value="1">志愿者</option>
+							</select>
+						</div> -->
 						<div class="login_code">
 							<input type="text" placeholder="请输入下图验证码"  id="inputCode" />
 							<div class="code" id="checkCode" onclick="createCode()" ></div>

@@ -1,3 +1,4 @@
+//寻亲者验证码
 function createCode() {
     code = "";
     var codeLength = 4; //验证码的长度
@@ -41,9 +42,28 @@ function validateCode(){
             alert("请完善您的必填信息");
         }
         else{
+            //判断value值
             //这里做与后台做交互
-            alert("登录成功");
-            window.location.href="#";
+            // .$.ajax({
+            //     url: '/userLogin/register',
+            //     type: 'POST',
+            //     data: {phone: 'value1',},
+            // })
+            // .success(function(data) {
+            //     console.log(data);
+            // ;
+            
+            // alert("登录成功");
+            // window.location.href="#";
         }
     }
+}
+//点击切换选框
+function login_middle_right_vol(){
+    $(".login_title_search").css({"background-color":"#b02505","color":"#fff"});
+    $(".login_title_vol").css({"background-color":"#fff","color":"#000"});
+}
+function login_middle_right_search(){
+    $(".login_title_vol").css({"background-color":"#b02505","color":"#fff"});
+    $(".login_title_search").css({"background-color":"#fff","color":"#000"});
 }

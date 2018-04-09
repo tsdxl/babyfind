@@ -126,85 +126,24 @@ $(document).ready(function(){
 			alert("请输入失踪地点");
 		}
 	});
+	//点击跳转到指定位置
+	$(".about_list_intro").click(function() {
+		var t = $('.about_partgrey').offset().top;
+        $('html, body').animate({scrollTop:t}, 300);
+	});
+	$(".about_list_purpose").click(function() {
+		var t = $('.about_partwhite').offset().top;
+		$('html, body').animate({scrollTop:t}, 300);
+	});
+	$(".about_list_recruit").click(function() {
+		var t = $('.about_partgrey_two').offset().top;
+		$('html, body').animate({scrollTop:t}, 300);
+	});
+	$(".about_list_contact").click(function() {
+		var t = $('.about_partwhite_two').offset().top;
+		$('html, body').animate({scrollTop:t}, 300);
+	});
+	$(".about_top").click(function() {
+		$('html, body').animate({scrollTop:0}, 'slow');
+	});
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*//轮播不完整版
-var i=0;
-var timer;
-$(function(){
-	$(".banner ul li").eq(0).show().siblings().hide();//显示第一张图片，其余隐藏。
-	ShowTime();
-	$(".tab").hover(function(){
-		 //获取到当前鼠标放上去的那个下标索引
-		i=$(this).index();
-		Show();
-		clearInterval(timer);//清除轮播
-	},function(){
-		ShowTime();//当鼠标离开之后继续轮播
-	});
-	//左边按钮
-	$(".flex_prev").click(function() {
-		clearInterval(timer);//清除轮播
-		if(i==0){
-			i=4;
-		}
-		i--;//先显示再开始轮播
-		Show();
-		ShowTime();//轮播
-	});
-	//右边按钮
-	$(".flex_next").click(function(){
-		clearInterval(timer);//清除轮播
-		if(i==3)
-		{
-            i=-1;
-        }
-        i++;
-        //先显示再开始轮播
-        Show();//显示
-        ShowTime();//轮播
-    });
-});
-//图片以及下标显示方法
-function Show(){
-    //下标为i的图片显示，其余隐藏。
-    $(".banner").eq(i).fadeIn(300).siblings().fadeOut(300);
-    //当轮播到对应的图片时给下面序号加上一个bg样式，其他移除样式bg。
-    $(".tab").eq(i).addClass("bg").siblings().removeClass("bg");
-};
-//轮播过程方法
-function ShowTime() {
-    //轮播过程  图片间隔4S轮播一次
-    timer=setInterval(function(){
-        //间隔多长时间执行前面的方法function(){}
-        i++;
-        if(i==4)
-        {
-            i=0;
-        }
-        Show();
-    },4000);
-    //轮播过程结束
-};
-//鼠标移入移出 箭头显示隐藏
-$(function(){
-	$(".banner").mouseenter(function() {
-		$(".banner_btn").fadeIn(500);
-	});
-	$(".banner").mouseleave(function() {
-		$(".banner_btn").fadeOut(500);
-	});
-});*/

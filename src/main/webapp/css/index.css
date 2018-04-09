@@ -2,7 +2,7 @@ body{
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	min-width:1300px;
+	min-width:1350px;
 	font-family: "微软雅黑";
 	text-decoration:none;
 }
@@ -514,6 +514,11 @@ textarea{
 	width: 50%;
 	float: left;
 }
+.login_middle_right_two{
+	width: 50%;
+	float: left;
+	display: none;
+}
 .login_con{
 	width: 85%;
 	margin:0 auto;
@@ -525,20 +530,22 @@ textarea{
 	width: 46%;
 	overflow: hidden;
 	text-align: center;
-	font-size: 20px;
+	font-size: 18px;
 }
 .login_title_search{
 	float: left;
 	width: 50%;
+	padding: 5px;
 	border-right: 2px solid #ccc;
-	padding: 8px;
-	background-color: #b02505;
-	color: #fff;
 }
 .login_title_vol{
 	float: left;
 	width: 50%;
-	padding: 8px;
+	padding: 5px;
+}
+.login_title_bg{
+	background-color: #b02505;
+	color: #fff;
 }
 .login_input{
 	border: 2px solid #ccc;
@@ -645,11 +652,13 @@ textarea{
 }
 .about_list ul{
 	list-style-type: none;
+	overflow: hidden;
 }
 .about_list ul li{
 	float: left;
 	text-align: center;
 	width: 25%;
+	cursor: pointer;
 }
 .about_con{
 	width: 100%;
@@ -658,16 +667,109 @@ textarea{
 .about_partgrey{
 	background-color: #f7f7f7;
 	padding: 80px 0;
-	line-height: 40px;
-	font-size: 14px;
+	line-height: 50px;
+	font-size: 15px;
 }
 .about_partgrey p{
 	font-size: 30px;
 	letter-spacing: 2px;
 }
+.about_partgrey span{
+	font-size: 17px;
+	font-weight: bold;
+}
+.about_partwhite{
+	background-color: #fff;
+	padding: 80px 0;
+	line-height: 40px;
+	font-size: 14px;
+}
+.about_partwhite p{
+	font-size: 30px;
+	letter-spacing: 2px;
+}
+.about_partwhite ul{
+	list-style-type: none;
+	width: 50%;
+	margin:20px auto;
+	overflow: hidden;
+    padding: 30px 0 20px;
+}
+.about_partwhite ul li{
+	float: left;
+	font-size: 24px;
+	text-align: center;
+	width: 33.3%;
+}
+.about_partgrey_two{
+	background-color: #f7f7f7;
+	padding: 80px 0;
+	line-height: 50px;
+	font-size: 15px;
+}
+.about_partgrey_two p{
+	font-size: 30px;
+	letter-spacing: 2px;
+}
+.about_partgrey_two span{
+	font-size: 17px;
+	font-weight: bold;
+}
 .redline2{
 	border-bottom: 2px solid #af424b;
 	width: 80px;
 	margin: 0 auto 50px;
+}
+.about_partgrey img{
+	margin: 20px 0;
+}
+.about_partgrey a:hover{
+	text-decoration: underline;
+	color: red;
+}
+.about_register{
+	font-size: 16px;
+	color: #ff0000;
+}
+.about_partwhite_two{
+	background-color: #fff;
+	padding: 80px 0;
+	line-height: 40px;
+	font-size: 14px;
+}
+.about_partwhite_two p{
+	font-size: 30px;
+	letter-spacing: 2px;
+}
+.about_partwhite_two ul{
+	list-style-type: none;
+	width: 70%;
+	margin:20px auto;
+	overflow: hidden;
+    padding: 30px 0 20px;
+}
+.about_partwhite_two ul li{
+	float: left;
+	font-size: 24px;
+	text-align: center;
+	width: 33.3%;
+	font-size: 16px;
+	text-align: left;
+	width: 50%;
+	padding-left: 10%;
+}
+.about_partwhite_two ul li:first-child{
+	border-right: 1px dashed #af424b;
+}
+.about_partwhite_two ul li p{
+	font-size: 20px;
+}
+.about_top{
+	position: fixed;
+	z-index: 10;
+	right: 30px;
+	bottom: 150px;
+	width: 5%;
+	cursor: pointer;
 }
 /* about_us end */
