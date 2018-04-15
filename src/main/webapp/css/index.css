@@ -773,3 +773,68 @@ textarea{
 	cursor: pointer;
 }
 /* about_us end */
+/* photo_contrast strat */
+.info_left{
+	width: 25%;
+	margin: 60px 0;
+	float: left;
+}
+.info_right{
+	width: 75%;
+	margin: 60px 0;
+	float: left;
+}
+.info_left p{
+	line-height: 60px;
+	float: left;
+	font-size: 20px;
+	color: #c22830;
+	margin: 0 0 0 40px;
+}
+.info_left_text{
+	width: 80%;
+	height: 60px;
+	margin-bottom: 20px;
+	background-color: #fafafa;
+}
+.info_left_text_i{
+	width: 4px;
+	background-color: #c22830;
+	height: 60px;
+	float: left;
+}
+.info_right_con{
+	width: 90%;
+	margin:0 auto;
+	padding: 30px 40px;
+	background-color: #fafafa;
+	border-bottom: 2px solid #efefef;
+}
+.info_right_text{
+	color:#333;
+	margin: 0 100px 30px;
+}
+.info_right_con p{
+	font-size: 22px;
+	font-weight: bold;
+	margin: 50px 120px 0;
+	color: #333;
+}
+.info_right_con p img{
+	margin-left: 15px;
+}
+.info_right_text td{
+	text-align: left;
+	width: 50%;
+	font-size: 16px;
+}
+.info_right_text td img{
+	margin-right: 10px;
+}
+.edit_address{
+	margin-left: 15px;
+}
+/* photo_contrast end */
+/* photo_contrast strat */
+
+/* photo_contrast end */
