@@ -42,28 +42,31 @@ function validateCode(){
             alert("请完善您的必填信息");
         }
         else{
-            //判断value值
+            var flag=$(".login_button").attr('value');
+            
             //这里做与后台做交互
-            // .$.ajax({
-            //     url: '/userLogin/register',
-            //     type: 'POST',
-            //     data: {phone: 'value1',},
-            // })
+            .$.ajax({
+                url: '/userLogin/register',
+                type: 'POST',
+                data: {phone:'18989471525',password:$("input[name='vol_password']").val(),flag:'0'},
+            })
             // .success(function(data) {
             //     console.log(data);
             // ;
-            
             // alert("登录成功");
             // window.location.href="#";
         }
     }
 }
 //点击切换选框
-function login_middle_right_vol(){
+function login_middle_right_search(){
     $(".login_title_search").css({"background-color":"#b02505","color":"#fff"});
     $(".login_title_vol").css({"background-color":"#fff","color":"#000"});
+    $(".login_button").attr('value', '0');
+
 }
-function login_middle_right_search(){
+function login_middle_right_vol(){
     $(".login_title_vol").css({"background-color":"#b02505","color":"#fff"});
     $(".login_title_search").css({"background-color":"#fff","color":"#000"});
+    $(".login_button").attr('value', '1');
 }
