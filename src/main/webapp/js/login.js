@@ -43,18 +43,17 @@ function validateCode(){
         }
         else{
             var flag=$(".login_button").attr('value');
-            
             //这里做与后台做交互
             .$.ajax({
                 url: '/userLogin/register',
                 type: 'POST',
                 data: {phone:'18989471525',password:$("input[name='vol_password']").val(),flag:'0'},
-            })
+            });
             // .success(function(data) {
             //     console.log(data);
-            // ;
-            // alert("登录成功");
-            // window.location.href="#";
+            //     alert("登录成功");
+            //     window.location.href="#";
+            // });
         }
     }
 }

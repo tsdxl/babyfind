@@ -12,22 +12,22 @@
 
 </head>
 <body>
-  <div class="top">
-    <div class="top_con">
-      <div class="top_welcome">
-        欢迎来到寻亲互助网
-      </div>
-      <div class="top_login">
-        <a href="login.html">
-          <span>登录</span>
-        </a>
-        <a href="javascript:void(0)">
-          <span>注册</span>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="toptwo">
+  	<div class="top">
+    	<div class="top_con">
+	      	<div class="top_welcome">
+	        	欢迎来到寻亲互助网
+	      	</div>
+      		<div class="top_login">
+        		<a href="login.html">
+					<span>登录</span>
+				</a>
+				<a href="vol_login.html">
+					<span>注册</span>
+				</a>
+      		</div>
+    	</div>
+  	</div>
+  	<div class="toptwo">
 		<div class="logo">
 			<img width="100%" src="img/logo.png" alt="" />
 		</div>
@@ -49,16 +49,39 @@
 					<a href="aboutus.html">关于我们</a>
 				</li>
 				<li>
-					<a href="knowledge.html">救助知识</a>
+					<a href="#">救助知识</a>
 				</li>
 			</ul>
 		</div>
 	</div>
-  <div class="middle">
+  	<div class="middle">
 		<div class="redline"></div>
-
-  </div>
-  <div class="footer">
+		<div class="photo_upload">
+			<div class="search_info">
+				<span>选择要上传的照片文件</span>
+				<input type="file" class="img_file" />
+				<div class="button" id="upload_next">下一步</div><br>
+				<div class="img_box"></div>
+			</div>
+		</div>
+		<div class="photo_contrast" style="display:none;">
+			<p>正在搜索网站中是否有匹配信息，请稍等...</p>
+			<div class="photo_contrast_left"></div>
+			<div class="photo_contrast_right"></div>
+		</div>
+  	</div>
+	<div class="contrast_next_tips" style="display:none;">
+		<p>提示</p>
+		<div class="complete_tips_con">
+			匹配成功！<br>
+			是否跳转到个人信息？<br>
+			<div class="contrast_button">
+				<div class="button_yes">是</div>
+				<div class="button_no">否</div>
+			</div>
+		</div>
+	</div>
+  	<div class="footer">
 		<p>版权所有 ©  寻亲互助网 All Rights Reserved</p>
 		<p>地址：浙江工商大学杭州商学院</p>
 	</div>

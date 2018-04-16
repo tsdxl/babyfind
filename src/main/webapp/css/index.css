@@ -455,15 +455,16 @@ textarea{
 .complete_tips p{
 	width: 100%;
 	background-color: #b51c1c;
-	font-size: 2rem;
+	font-size: 20px;
 	color: #fff;
 	text-align: center;
-	line-height: 3rem;
+	line-height: 36px;
 }
 .complete_tips_con{
 	text-align: center;
-	line-height: 2.5rem;
-    margin: 1.8rem 0;
+	line-height: 28px;
+    margin: 15px 0;
+    overflow: hidden;
 }
 .complete_tips_con span{
 	margin:0;
@@ -805,14 +806,15 @@ textarea{
 }
 .info_right_con{
 	width: 90%;
-	margin:0 auto;
+	margin:0 auto 30px;
 	padding: 30px 40px;
 	background-color: #fafafa;
-	border-bottom: 2px solid #efefef;
+	border-bottom: 3px solid #efefef;
 }
 .info_right_text{
 	color:#333;
 	margin: 0 100px 30px;
+	overflow: hidden;
 }
 .info_right_con p{
 	font-size: 22px;
@@ -828,13 +830,102 @@ textarea{
 	width: 50%;
 	font-size: 16px;
 }
+.info_right_text td:nth-child(2n){
+	width: 40%;
+}
 .info_right_text td img{
 	margin-right: 10px;
 }
 .edit_address{
 	margin-left: 15px;
 }
+.miss_photo{
+	width: 35%;
+	border: 1px solid #ccc;
+	height: 200px;
+	float: left;
+	margin: 50px 5% 0 0;
+}
+.info_right_miss table{
+	float: left;
+	width: 60%;
+}
+.info_right_miss table td{
+	width: 100%;
+}
 /* photo_contrast end */
 /* photo_contrast strat */
-
+.photo_upload{
+	width: 70%;
+	margin:50px auto;
+	padding: 0px 20px;
+	position: relative;
+}
+.photo_upload .search_info{
+	width: 100%;
+	margin: 0 auto 30px;
+	overflow: hidden;
+}
+.photo_upload span{
+	float: left;
+	margin-left: 120px;
+}
+.photo_upload input{
+	float: left;
+	margin-left: 80px;
+}
+.photo_upload .button{
+	float: left;
+	margin-left: 50px;
+}
+.photo_contrast{
+	width: 80%;
+	overflow: hidden;
+	margin:0 auto 50px;
+}
+.photo_contrast p{
+	text-align: center;
+	margin-bottom: 40px;
+}
+.photo_contrast_left ,.photo_contrast_right{
+	float: left;
+	width: 48%;
+	height: 350px;
+	margin: 0 1%;
+	border: 1px solid #999;
+}
+.contrast_next_tips{
+	width: 250px;
+	height: 170px;
+	border: 1px solid #b51c1c;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin:auto;
+	background-color: #fff;
+}
+.contrast_next_tips p{
+	width: 100%;
+	background-color: #b51c1c;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	line-height: 36px;
+}
+.contrast_button{
+	width: 65%;
+	margin:10px auto 0;
+	overflow: hidden;
+}
+.button_yes, .button_no{
+	width: 40px;
+	height: 30px;
+	background-color: #b20000;
+	float: left;
+	margin: 0 20px;
+	color: #fff;
+	text-align: center;
+}
 /* photo_contrast end */
