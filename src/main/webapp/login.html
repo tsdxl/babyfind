@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录</title>
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<div class="login">
+		<a href="index.html">
+			<div class="login_logo">
+				<div class="logo">
+					<img width="100%" src="img/logo.png" alt="" />
+				</div>
+				<div class="title">
+					<img width="100%" src="img/title.png" alt="" />
+				</div>
+			</div>
+		</a>
+		<div class="login_middle">
+			<div class="login_middle_img">
+				<img width="100%" src="img/login_bg.jpg" alt="" />
+			</div>
+			<div class="login_middle_right">
+				<div class="login_con">
+					<div class="login_title">
+						<a href="javascript:void(0)" onclick="login_middle_right_search()">
+							<div class="login_title_search login_title_bg">寻亲者</div>
+						</a>
+						<a href="javascript:void(0)" onclick="login_middle_right_vol()">
+							<div class="login_title_vol">志愿者</div>
+						</a>
+					</div>
+					<div class="login_input">
+						<div class="login_name">
+							<i class="icon_user"></i>
+							<input type="text" placeholder="用户名/手机号" name="family_phone"/>
+						</div>
+						<div class="login_name">
+							<i class="icon_password"></i>
+							<input type="password" placeholder="密码"  name="family_password"/>
+						</div>
+						<!-- <div class="login_code" style="border: solid 1px black;">
+							<select  id="flag">
+								<option value="0">寻亲者</option>
+								<option value="1">志愿者</option>
+							</select>
+						</div> -->
+						<div class="login_code">
+							<input type="text" placeholder="请输入下图验证码"  id="inputCode" />
+							<div class="code" id="checkCode" onclick="createCode()" ></div>
+							<a  href="javascript:void(0)" onclick="createCode()">看不清换一张</a>
+							<div class="register"><a href="search_login.html">立即注册</a></div>
+						</div>
+						<a href="javascript:void(0)" onclick="validateCode()">
+							<div class="login_button" value="0">
+								登录
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<p>版权所有 ©  寻亲互助网 All Rights Reserved</p>
+			<p>地址：浙江工商大学杭州商学院</p>
+		</div>
+	</div>
+</body>
+</html>
