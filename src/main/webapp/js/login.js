@@ -55,6 +55,8 @@ function validateCode(){
                 console.log(data);
                 alert("登录成功");
                 //顶部显示"个人信息"可以跳转至个人信息页面
+                $("#login_before").hide();
+                $("#login_later").show();
                 //window.location.href="information.html";
             });
         }
