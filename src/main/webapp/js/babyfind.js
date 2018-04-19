@@ -80,13 +80,24 @@ $(document).ready(function(){
 		else if($(".birth_date").val()==""||$(".miss_date").val()==""){
 			alert("请选择日期");
 		}
-		else if($("number[name='family_phone']").val()==""){
+		else if($("input[name='family_phone']").val()==""){
 			alert("请正确输入手机号码");
 		}
 		else if($("textarea[name='feature_description']").val()==''){
 			alert("请填写关于失踪人的特征等信息");
 		}
 		else{
+			var user_name = $("input[name='user_name']").val();
+			var user_sex = $("input[name='user_sex']").val();
+			var birth_date = $(".birth_date").val();
+			var miss_date = $(".miss_date").val();
+			var miss_place = $("input[name='miss_place']").val();
+			var feature_description = $("textarea[name='feature_description']").val();
+			var family_name = $("input[name='family_name']").val();
+			var family_phone = $("input[name='family_phone']").val();
+			var relationship = $("input[name='relationship']").val();
+			var address = $("input[name='address']").val();
+			global arr_list = new Array(user_name : user_name, user_sex : user_sex, birth_date : birth_date, miss_date : miss_date, miss_place : miss_place, feature_description : feature_description, family_name : family_name, family_phone : family_phone, relationship : relationship, address : address);
 			$(".search_right_two").hide();
 			$(".search_left_img2").hide();
 			$(".search_right_three").show();
@@ -95,6 +106,17 @@ $(document).ready(function(){
 	});
 	//点击寻亲登记中的完成按钮
 	$("#complete").click(function() {
+		//获取此时的img上传路径
+		arr_list['imgurl']="";
+		console.log(arr_list);
+		$.ajax({
+			url: '/missInfo/insertInfo',
+			type: 'POST',
+			data: arr_list,
+		})
+		.success(function(data) {
+			console.log("success");
+		});
 		$(".search_left_img3").hide();
 		$(".search_left_img4").show();
 		$(".complete_tips").show();
@@ -105,7 +127,8 @@ $(document).ready(function(){
 	    	//console.log(num);
 	    	$('.complete_tips_con span').html(num);
 	    	if(num==0){
-	    		window.location.href="index.html"
+	    		//跳转到个人信息页面
+	    		window.location.href="imformation.html";
 	    	}
 	    };
 	    setInterval(tip_time,1000);
