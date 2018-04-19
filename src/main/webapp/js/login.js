@@ -43,17 +43,20 @@ function validateCode(){
         }
         else{
             var flag=$(".login_button").attr('value');
+            var phone = $("input[name='family_phone']").val();
+            var password = $("input[name='family_password']").val();
             //这里做与后台做交互
-            .$.ajax({
+            $.ajax({
                 url: '/userLogin/register',
                 type: 'POST',
-                data: {phone:'18989471525',password:$("input[name='vol_password']").val(),flag:'0'},
+                data: {phone : phone , password : password,flag : flag},
             });
-            // .success(function(data) {
-            //     console.log(data);
-            //     alert("登录成功");
-            //     window.location.href="#";
-            // });
+            .success(function(data) {
+                console.log(data);
+                alert("登录成功");
+                //顶部显示"个人信息"可以跳转至个人信息页面
+                //window.location.href="information.html";
+            });
         }
     }
 }
