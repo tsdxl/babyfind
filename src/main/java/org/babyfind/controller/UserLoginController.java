@@ -8,6 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+
+
 /**
  * @author zx
  * @Description
@@ -56,8 +63,10 @@ public class UserLoginController {
 
     @RequestMapping("login")
     @ResponseBody
-    public AjaxResult login(String phone,String passWord) {
+    public AjaxResult login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxResult ajaxResult = AjaxResult.succ();
+        String phone=request.getParameter("phone");
+        String passWord=request.getParameter("passWord");
         if (userLoginService.getInfoByPhone(phone)==null) {
             return AjaxResult.error("帐号密码错误");
         }
@@ -66,8 +75,11 @@ public class UserLoginController {
             return AjaxResult.error("帐号密码错误");
         }
         ajaxResult.addSingleModel(userLoginService.getInfoByPhone(phone));
+        HttpSession session =request.getSession();
+        session.setAttribute("phone",phone);
         return ajaxResult;
     }
+
     @RequestMapping("getInfoByPhone")
     @ResponseBody
     public AjaxResult getInfoByPhone(String phone) {

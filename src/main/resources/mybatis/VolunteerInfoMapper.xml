@@ -11,9 +11,14 @@
     <result column="profession" property="profession" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
     <result column="picurl" property="picurl" jdbcType="VARCHAR" />
+    <result column="political" property="political" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="experience" property="experience" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="qq" property="qq" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    vid, lid, name, idcard, sex, place, profession, email, picurl
+    vid, lid, name, idcard, sex, place, profession, email, picurl,political,address,experience,age,qq
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -37,7 +42,9 @@
       )
     values (#{vid,jdbcType=INTEGER}, #{lid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
       #{idcard,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{place,jdbcType=VARCHAR}, 
-      #{profession,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{picurl,jdbcType=VARCHAR}
+      #{profession,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{picurl,jdbcType=VARCHAR},
+      #{political,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{experience,jdbcType=VARCHAR},
+      #{age,jdbcType=INTEGER}, #{qq,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="org.babyfind.po.VolunteerInfo" >
@@ -70,6 +77,21 @@
       <if test="picurl != null" >
         picurl,
       </if>
+      <if test="political != null" >
+        political,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="experience != null" >
+        experience,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="qq != null" >
+        qq,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="vid != null" >
@@ -98,6 +120,21 @@
       </if>
       <if test="picurl != null" >
         #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="political != null" >
+        #{political,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="experience != null" >
+        #{experience,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="qq != null" >
+        #{qq,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -128,6 +165,21 @@
       <if test="picurl != null" >
         picurl = #{picurl,jdbcType=VARCHAR},
       </if>
+      <if test="political != null" >
+        political = #{political,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="experience != null" >
+        experience = #{experience,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="qq != null" >
+        qq = #{qq,jdbcType=INTEGER},
+      </if>
     </set>
     where vid = #{vid,jdbcType=INTEGER}
   </update>
@@ -140,6 +192,11 @@
       place = #{place,jdbcType=VARCHAR},
       profession = #{profession,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
+      political = #{political,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      experience = #{experience,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      qq = #{qq,jdbcType=INTEGER},
       picurl = #{picurl,jdbcType=VARCHAR}
     where vid = #{vid,jdbcType=INTEGER}
   </update>

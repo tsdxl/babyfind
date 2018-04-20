@@ -40,16 +40,14 @@ public class MissInfoController {
 
     @RequestMapping("insertInfo")
     @ResponseBody
-    public AjaxResult insertInfoByMissInfo(String phone,MissInfo missInfo) throws Exception {
-        AjaxResult ajaxResult=AjaxResult.succ();
-        if(userLoginService.getInfoByPhone(phone)==null){
-            return AjaxResult.error("没有此账户");
-        }
-        UserLogin userLogin=userLoginService.getInfoByPhone(phone);
-        if(userLogin.getFlag()!=0){
-            userLogin.setFlag(2);
-            userLoginService.updateInfoByMissInfo(userLogin);
-        }
+    public AjaxResult insertInfoByMissInfo(String phone,MissInfo missInfo,int flag) throws Exception {
+        AjaxResult ajaxResult;
+        UserLogin userLogin=new UserLogin();
+        userLogin.setFlag(flag);
+        userLogin.setPassword("123456");
+        userLogin.setPhone(phone);
+        UserLoginController userLoginController=new UserLoginController();
+        ajaxResult=userLoginController.insertInfoByUserLogin(userLogin);
         missInfo.setLid(userLoginService.getInfoByPhone(phone).getLid());
         if(missInfoService.getInfoByLid(missInfo.getLid())!=null){
             List<MissInfo> missInfoList=missInfoService.getInfoByLid(missInfo.getLid());
