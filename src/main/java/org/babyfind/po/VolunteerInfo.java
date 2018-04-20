@@ -18,6 +18,16 @@ public class VolunteerInfo {
     private String email;
 
     private String picurl;
+    //political address age qq experience
+    private String political;
+
+    private String address;
+
+    private int age;
+
+    private int qq;
+
+    private String experience;
 
     public Integer getVid() {
         return vid;
@@ -89,5 +99,45 @@ public class VolunteerInfo {
 
     public void setPicurl(String picurl) {
         this.picurl = picurl == null ? null : picurl.trim();
+    }
+
+    public String getPolitical() {
+        return political;
+    }
+
+    public void setPolitical(String political) {
+        this.political = political;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getQq() {
+        return qq;
+    }
+
+    public void setQq(int qq) {
+        this.qq = qq;
+    }
+
+    public String getExperience() {
+        return experience;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience;
     }
 }
