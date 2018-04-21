@@ -66,7 +66,7 @@ public class UserLoginController {
     public AjaxResult login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxResult ajaxResult = AjaxResult.succ();
         String phone=request.getParameter("phone");
-        String passWord=request.getParameter("passWord");
+        String passWord=request.getParameter("password");
         if (userLoginService.getInfoByPhone(phone)==null) {
             return AjaxResult.error("帐号密码错误");
         }

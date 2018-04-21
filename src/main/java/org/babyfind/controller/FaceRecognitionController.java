@@ -12,23 +12,26 @@ import java.io.File;
 @Controller
 @RequestMapping("/face/")
 public class FaceRecognitionController {
-    private static final String path = "D:\\d\\Program Files\\JetBrains\\IntelliJ IDEA 2017.3.4\\workspace\\babyfind\\src\\main\\webapp\\upload";
+    private static final String path = "D:\\d\\Program Files\\JetBrains\\IntelliJ IDEA 2017.3.4\\workspace\\babyfind\\src\\main\\webapp\\upload\\imgs\\";
 
-    @RequestMapping("deleteInfo")
+    @RequestMapping("compare")
     @ResponseBody
     public AjaxResult faceCompare(File file1) {
-        AjaxResult ajaxResult=AjaxResult.succ();
-        File file2 = new File(path + "\\imgs\\234.jpg");
+        AjaxResult ajaxResult = AjaxResult.succ();
+        BaiduFaceApi faceApi = new BaiduFaceApi();
+        File file2 = new File(path + "*.jpg");
+        JSONObject json = faceApi.matchPics(file1, file2);
+        ajaxResult.addObject("score", json.get("score"));
         return ajaxResult;
     }
 
-}
+
 //    public static void main(String[] args) {
 //        BaiduFaceApi faceApi = new BaiduFaceApi();
-//        File pic1 = new File(path+"\\imgs\\123.jpg");
-//        File pic2 = new File(path+"\\imgs\\234.jpg");
+//        File pic1 = new File(path+"123.jpg");
+//        File pic2 = new File(path+"234.jpg");
 //        JSONObject json = faceApi.matchPics(pic1,pic2);
-//
 //        System.out.println(json.toString());
 //    }
+}
 

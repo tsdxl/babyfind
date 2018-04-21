@@ -42,23 +42,27 @@ function validateCode(){
             alert("请完善您的必填信息");
         }
         else{
-            var flag=$(".login_button").attr('value');
-            var phone = $("input[name='family_phone']").val();
-            var password = $("input[name='family_password']").val();
-            //这里做与后台做交互
-            $.ajax({
-                url: '/userLogin/register',
-                type: 'POST',
-                data: {phone : phone , password : password,flag : flag},
-            });
-            .success(function(data) {
-                console.log(data);
-                alert("登录成功");
-                //顶部显示"个人信息"可以跳转至个人信息页面
-                $("#login_before").hide();
-                $("#login_later").show();
-                //window.location.href="information.html";
-            });
+            alert("登录成功");
+            window.location.href="information.html";
+            $(".login_before").hide();
+            $(".login_later").show();
+            // var flag=$(".login_button").attr('value');
+            // var phone = $("input[name='family_phone']").val();
+            // var password = $("input[name='family_password']").val();
+            // //这里做与后台做交互
+            // $.ajax({
+            //     url: '/userLogin/login',
+            //     type: 'POST',
+            //     data: {phone : phone , password : password,flag : flag}
+            // });
+            // .success(function(data) {
+            //     console.log(data);
+            //     alert("登录成功");
+            //     //顶部显示"个人信息"可以跳转至个人信息页面
+            //     $("#login_before").hide();
+            //     $("#login_later").show();
+            //     //window.location.href="information.html";
+            // });
         }
     }
 }
